@@ -10,7 +10,7 @@ const gameOptionsReq = {
     "Client-ID": "vb838qqqsndwhxbu1gg98ljvtavacr",
     Authorization: "Bearer zkomcikvy6y3dqgffmw7osa8to49fm",
   },
-  body: "fields summary,platforms.*,rating,first_release_date,genres.name,screenshots.*,name,cover.*;where cover!=null & themes != (42) & first_release_date <= 631152000 & rating != null;limit 400; ",
+  body: "fields genres.name; first_release_date <= 631152000 & rating != null;limit 400; ",
 };
 
 const gameGenresOptionsReq = {
