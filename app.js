@@ -1,6 +1,7 @@
 const request = require("request");
 const http = require("http");
 let apiGenresData;
+const port = process.env.PORT || 3000;
 
 const gameOptionsReq = {
   url: "https://api.igdb.com/v4/games",
@@ -8,7 +9,7 @@ const gameOptionsReq = {
   headers: {
     "Content-Type": "application/json",
     "Client-ID": "vb838qqqsndwhxbu1gg98ljvtavacr",
-    Authorization: "Bearer vfy1vmyrfsegaywsniv2jdfpvjbm0x",
+    Authorization: "Bearer k6tqiesijg0nn50ozc0kitt405g5dv",
   },
   body: "fields genres.name; first_release_date <= 631152000 & rating != null;limit 400; ",
 };
@@ -41,4 +42,4 @@ const serverForSendingGameGenres = http.createServer((req, res) => {
   res.end(JSON.stringify(apiGenresData));
 });
 
-serverForSendingGameGenres.listen(process.env.PORT || 5002, () => {});
+serverForSendingGameGenres.listen(process.env.PORT || 3000, "0.0.0.0");
